@@ -1,0 +1,87 @@
+/* .algo => class = "algo"=
+    #info-libro => id="info-libro"
+*/
+/* Prioridades:  */
+/* inline > id > class > etiqueta > '*'selector universal */
+header{
+    background-color: rgb(17, 37, 54);
+    color: black;
+}
+
+
+body{
+  background-image:url(../img/fondo-3.gif);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-size: cover;   
+  background-repeat: repeat-y; 
+  background-position: center center; 
+  color: aliceblue;
+}
+ 
+/*El de nosotros xq se me trancaba el paty y no podia hacer que quede decente */
+.tabla-productos table {
+  background-color: #916969; /* fondo blanco */
+  border-collapse: collapse; /* quita espacios entre celdas */
+  width: 70%;               /* ocupa todo el ancho del contenedor */
+}
+
+.tabla-productos th, 
+.tabla-productos td {
+  border: 1px solid #473f8f; /* borde suave */
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.tabla-productos th {
+  background-color: #473f8f; /* color diferente para encabezados */
+}
+ /*Esta de este color para que se diferencie del fondo, sigo viendo si le voy a dejar el gif de fondo. Me gusta pero el contraste esta complicado */
+.contacto-form{
+  background-color: rgb(155, 155, 132);
+}
+
+
+.content-centrado{
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;      
+  padding: 2rem;
+}
+
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+  max-width: 1300px; 
+  margin: 0 auto;  
+
+}
+.grid-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Imagen */
+.grid-item img {
+  width: 80%;
+  border-radius: 5px;
+
+}
+
+
+ footer{
+    background-color: aliceblue;
+    margin-top:30px;
+    color: black;
+    justify-content: center; 
+    align-items: center;     
+    text-align: center; 
+ }
