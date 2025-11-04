@@ -3,12 +3,14 @@
 */
 /* Prioridades:  */
 /* inline > id > class > etiqueta > '*'selector universal */
+/* 1 rem = 16px */
 header{
     background-color: rgb(17, 37, 54);
     color: black;
 }
 
-
+/*El backgroud era un gif, quedaba muy lindo pero pesaba 180 y no me dejaba subirlo
+asi que de momento le dejo una foto y despues intento recortarlo mas todavia */
 body{
   background-image:url(../img/cosmere.jpg);
   margin: 0;
@@ -58,7 +60,7 @@ body{
   flex-direction: column;
   gap: 3rem;
   padding: 2rem;
-  max-width: 1300px; 
+  max-width: 81.25rem; 
   margin: 0 auto;  
 
 }
@@ -72,16 +74,59 @@ body{
 /* Imagen */
 .grid-item img {
   width: 80%;
-  border-radius: 5px;
+  border-radius: 0.3rem;
 
 }
 
 
  footer{
     background-color: aliceblue;
-    margin-top:30px;
+    margin: top 1.9rem;;
     color: black;
     justify-content: center; 
     align-items: center;     
     text-align: center; 
  }
+
+ /*Aca esta por verse  */
+ /*Deberia buscar la forma de rotar Palabras radiantes o hacerlo todo en la misma columna pero no me gusta como queda asi en formatoe escritorio */
+ /*En la pagina 3 esta por verse el tema de la tabla ya que hace que en mi celular 390 x 844 queda espacio en los costados*/
+ @media (max-width: 768px) {
+
+  body {
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+  }
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .grid-item img {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .descripcion {
+    padding: 0.5rem 1rem;
+  }
+
+  .descripcion h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+
+  .descripcion p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}
