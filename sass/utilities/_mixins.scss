@@ -1,0 +1,27 @@
+/* MIXINS */
+
+
+/* Breakpoints */
+$mobile: 768px;
+$tablet: 1024px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid($columns) {
+  display: grid;
+  grid-template-columns: $columns;
+  gap: 1rem;
+}
+
+@mixin respond-to($break) {
+  @if $break == tablet {
+    @media (max-width: $tablet) { @content; }
+  }
+  @if $break == mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+}

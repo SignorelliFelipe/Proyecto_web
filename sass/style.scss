@@ -1,44 +1,13 @@
-/* VARIABLES */
+@use "./utilities/variables" as *;
+@use "./utilities/mixins" as *;
 
-$color-texto: aliceblue;
-$color-header: rgb(17, 37, 54);
-$color-card: rgba(255, 255, 255, 0.3);
-$color-card-header: rgba(255, 255, 255, 0.2);
-$color-separador: #aaa;
 
-$radius-sm: 0.3rem;
-$radius-md: 0.6rem;
+//mq 
 
-$max-width: 81.25rem;
+@use "./layout/mq-mobile.scss";
+@use "./layout/mq-tablet.scss";
 
-/* Breakpoints */
-$mobile: 768px;
-$tablet: 1024px;
-
-/* MIXINS */
-
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin grid($columns) {
-  display: grid;
-  grid-template-columns: $columns;
-  gap: 1rem;
-}
-
-@mixin respond-to($break) {
-  @if $break == tablet {
-    @media (max-width: $tablet) { @content; }
-  }
-  @if $break == mobile {
-    @media (max-width: $mobile) { @content; }
-  }
-}
-
-/* ROOT */
+//odio sass me rompio la pagina 14 veces con 78657 de cosas diferentes
 
 :root {
   font-size: 16px;
@@ -63,6 +32,7 @@ header {
 
 .content-centrado {
   @include flex-center;
+  
   flex-direction: column;
   text-align: center;
   padding: 2rem;
@@ -204,86 +174,3 @@ footer {
   padding: 1rem;
 }
 
-/* MEDIA QUERIES */
-
-/* TABLET */
-@include respond-to(tablet) {
-
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
-
-    .header {
-      grid-column: span 2;
-    }
-  }
-
-  .grid-item {
-    grid-template-columns: 1fr;
-    text-align: center;
-
-    img {
-      width: 60%;
-    }
-  }
-
-  .autores-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* MOBILE */
-@include respond-to(mobile) {
-
-  .grid-item {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    img {
-      width: 90%;
-    }
-  }
-
-  /* Cards para productos */
-  .grid-productos {
-    display: block;
-  }
-
-  .item.header {
-    display: none;
-  }
-
-  .item {
-    background: rgba(255,255,255,0.8);
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border-radius: 0.6rem;
-    color: black;
-    box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.15);
-    @include flex-center;
-    justify-content: space-between;
-
-    &::before {
-      margin-right: 1rem;
-      font-weight: bold;
-    }
-
-    &:nth-of-type(4n + 1)::before { content: "ID"; }
-    &:nth-of-type(4n + 2)::before { content: "Precio"; }
-    &:nth-of-type(4n + 3)::before { content: "Envío"; }
-    &:nth-of-type(4n + 4)::before { content: "Descripción"; }
-  }
-
-  .autores-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-
-    .autor-card img {
-      height: 12rem;
-    }
-  }
-
-  footer {
-    font-size: 0.9rem;
-  }
-}

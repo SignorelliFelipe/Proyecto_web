@@ -1,8 +1,89 @@
 @charset "UTF-8";
 /* VARIABLES */
-/* Breakpoints */
 /* MIXINS */
-/* ROOT */
+/* Breakpoints */
+/* MEDIA QUERIES */
+/* MOBILE */
+@media (max-width: 768px) {
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    grid-template-columns: unset !important;
+    grid-auto-flow: unset !important;
+    place-items: unset !important;
+  }
+  .grid-item img {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+  /* Cards para productos */
+  .grid-productos {
+    display: block;
+  }
+  .item.header {
+    display: none;
+  }
+  .item {
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    color: black;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .item::before {
+    margin-right: 1rem;
+    font-weight: bold;
+  }
+  .item:nth-of-type(4n + 1)::before {
+    content: "ID";
+  }
+  .item:nth-of-type(4n + 2)::before {
+    content: "Precio";
+  }
+  .item:nth-of-type(4n + 3)::before {
+    content: "Envío";
+  }
+  .item:nth-of-type(4n + 4)::before {
+    content: "Descripción";
+  }
+  .autores-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .autores-grid .autor-card img {
+    height: 12rem;
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+}
+/* MEDIA QUERIES */
+/* TABLET */
+@media (max-width: 1024px) {
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-productos .header {
+    grid-column: span 2;
+  }
+  .grid-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .grid-item img {
+    width: 60%;
+  }
+  .autores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 :root {
   font-size: 16px;
 }
@@ -154,83 +235,6 @@ footer {
   color: black;
   text-align: center;
   padding: 1rem;
-}
-
-/* MEDIA QUERIES */
-/* TABLET */
-@media (max-width: 1024px) {
-  .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .grid-productos .header {
-    grid-column: span 2;
-  }
-  .grid-item {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .grid-item img {
-    width: 60%;
-  }
-  .autores-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-/* MOBILE */
-@media (max-width: 768px) {
-  .grid-item {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .grid-item img {
-    width: 90%;
-  }
-  /* Cards para productos */
-  .grid-productos {
-    display: block;
-  }
-  .item.header {
-    display: none;
-  }
-  .item {
-    background: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    border-radius: 0.6rem;
-    color: black;
-    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.15);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .item::before {
-    margin-right: 1rem;
-    font-weight: bold;
-  }
-  .item:nth-of-type(4n + 1)::before {
-    content: "ID";
-  }
-  .item:nth-of-type(4n + 2)::before {
-    content: "Precio";
-  }
-  .item:nth-of-type(4n + 3)::before {
-    content: "Envío";
-  }
-  .item:nth-of-type(4n + 4)::before {
-    content: "Descripción";
-  }
-  .autores-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  .autores-grid .autor-card img {
-    height: 12rem;
-  }
-  footer {
-    font-size: 0.9rem;
-  }
 }
 
 /*# sourceMappingURL=main.css.map */

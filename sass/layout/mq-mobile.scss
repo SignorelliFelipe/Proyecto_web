@@ -1,0 +1,67 @@
+/* MEDIA QUERIES */
+@use "../utilities/mixins" as *;
+/* MOBILE */
+@include respond-to(mobile) {
+
+ .grid-item {
+  display: flex;       // usamos flex en mobile
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+
+  grid-template-columns: unset !important;
+  grid-auto-flow: unset !important;
+  place-items: unset !important;
+
+  img {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+}
+
+
+  /* Cards para productos */
+  .grid-productos {
+    display: block;
+  }
+
+  .item.header {
+    display: none;
+  }
+
+  .item {
+    background: rgba(255,255,255,0.8);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    color: black;
+    box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.15);
+    @include flex-center;
+    justify-content: space-between;
+
+    &::before {
+      margin-right: 1rem;
+      font-weight: bold;
+    }
+
+    &:nth-of-type(4n + 1)::before { content: "ID"; }
+    &:nth-of-type(4n + 2)::before { content: "Precio"; }
+    &:nth-of-type(4n + 3)::before { content: "Envío"; }
+    &:nth-of-type(4n + 4)::before { content: "Descripción"; }
+  }
+
+  .autores-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .autor-card img {
+      height: 12rem;
+    }
+  }
+
+
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
