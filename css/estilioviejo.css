@@ -22,26 +22,24 @@ body{
   color: aliceblue;
 }
  
-/*El de nosotros xq se me trancaba el paty y no podia hacer que quede decente */
-.tabla-productos table {
-  background-color: #916969; /* fondo blanco */
-  border-collapse: collapse; /* quita espacios entre celdas */
-  width: 70%;               /* ocupa todo el ancho del contenedor */
+.grid-productos {
+    display: grid;
+    grid-template-columns: 120px 120px 120px 120px 1fr; /* 5 columnas */
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.tabla-productos th, 
-.tabla-productos td {
-  border: 1px solid #473f8f; /* borde suave */
-  padding: 0.8rem;
-  text-align: left;
+.item {
+    padding: 10px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 5px;
 }
 
-.tabla-productos th {
-  background-color: #473f8f; /* color diferente para encabezados */
-}
- /*Esta de este color para que se diferencie del fondo, sigo viendo si le voy a dejar el gif de fondo. Me gusta pero el contraste esta complicado */
-.contacto-form{
-  background-color: rgb(155, 155, 132);
+.header {
+    font-weight: bold;
+    background: rgba(255,255,255,0.2);
 }
 
 
@@ -70,6 +68,16 @@ body{
   align-items: center;
   gap: 2rem;
 }
+.sep-box {
+    text-align: center;
+    padding: 8px 0;
+    margin: 25px 0;
+    border-top: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+    font-size: 30px;
+    color: #fdf8f8;
+    letter-spacing: 5px;
+}
 
 /* Imagen */
 .grid-item img {
@@ -78,6 +86,70 @@ body{
 
 }
 
+.autores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    margin: 40px auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.autor-card {
+    text-align: center;
+}
+
+.autor-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+}
+
+.autor-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #949393;
+}
+
+.contacto-form form {
+    display: grid;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.contacto-form input[type="submit"] {
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.subtitulo-nosotros {
+    text-align: center;
+    margin-top: 30px;
+    color: #887ae4;
+    font-weight: normal;
+}
+.lista-compromiso {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    text-align: center;
+    color: #929292;
+}
+.lista-compromiso li {
+    margin: 8px 0;
+}
 
  footer{
     background-color: aliceblue;
@@ -87,6 +159,7 @@ body{
     align-items: center;     
     text-align: center; 
  }
+ 
 
  /*Aca esta por verse  */
  /*Deberia buscar la forma de rotar Palabras radiantes o hacerlo todo en la misma columna pero no me gusta como queda asi en formatoe escritorio */
@@ -123,6 +196,12 @@ body{
   .descripcion p {
     font-size: 0.95rem;
     line-height: 1.4;
+  }
+  .grid-productos {
+   grid-template-columns: 1fr 1fr; /* 2 columnas */
+  }
+  .header {
+    grid-column: span 2; /* Las cabeceras ocupan toda la fila */
   }
 
   footer {
